@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html  dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("operator");
+// + - * / % **
+console.log(8**2);
+
+// & | ^
+console.log(8&2);//1000  0010
+console.log(8|2);
+console.log(8^2);
+
+console.log(true&true);
+console.log(true&false);
+
+
+// && ,||
+console.log(true&&true);
+console.log(true&&false);
+console.log("kim"&&"lee");
+console.log(""||"lee");
+console.log(false||"lee");
+console.log(0||"lee");
+console.log(undefined||"lee");
+console.log(null||"lee");
+function fn(name) {
+  console.log(name);
+  let t_name = name||"lee";
+  console.log(t_name);
+}
+fn();
+fn(null);
+fn(0);
+fn(false);
+fn("");
+
+// =, +=, -=, /=, %=, &=, |=, ^=,
+var a = 10;
+a += 10;
+console.log(a);
+
+// >>, <<
+console.log(8>>1);
+console.log(8>>2);
+console.log(2<<1);
+console.log(2<<2);
+
+//삼항연산자: ? :
+console.log(true? "kim":"lee");
+console.log(false? "kim":"lee");
+console.log(0? "kim":"lee");
+console.log(0? "kim1":0? "kim2":"lee");
+console.log(0? 11: 0 ? 22:33);
+
+//new : 주소생성연산자-객체,배열
+var obj = new Object();//{}
+//var obj2 = {};
+//var su = 20;
+var arr = new Array(3);//[undefined,undefined,undefined]
+var arr = new Array(3,3,3);//[3,3,3]
+console.log(arr[0]);//undefined
+var arr2 = [undefined,undefined,undefined];
+
+// . : 참조연산,왼쪽대상안에 오른쪽것이 반드시 있다.
+obj.kor = 99;//{kor:99}
+console.log(obj.kor);
+
+// , , , 연결연산자
+
+</script>
+</head>
+<body>
+<h1>operator</h1>
+</body>
+</html>

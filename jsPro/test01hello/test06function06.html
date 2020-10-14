@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("function : 1급함수 기능");
+//1.함수를 변수에 할당
+var fn1 = function() {
+  console.log("fn1()....");
+};
+fn1();
+window.onload = function () {
+  console.log("window.onload....");
+  var title = document.getElementById("title");
+  title.onclick = function () {
+    console.log("title.onclick....");
+  };
+};
+// window.onclick = function () {
+//   console.log("window.onclick....");
+// };
+
+
+//2.함수를 리턴문에 반환
+function fn2() {
+  console.log("fn2()...");
+  var count = 0;
+  function fn() {
+    count++;
+    console.log("fn()..."+count);
+    return 100;
+  }
+  return fn;
+}
+fn2();
+console.log(fn2());
+console.log(fn2()());
+console.log(fn2()());
+console.log(fn2()());
+var fn = fn2();
+fn();
+fn();
+fn();
+
+//3.함수의 인자로 함수를 할당.
+function fn3(x) {
+  console.log("fn3()....");
+  console.log(typeof x);
+  console.log(x);
+  if (typeof x === "function") {
+    x();
+  }
+  if (Array.isArray(x)) {
+    for(var i in x){
+      console.log(x[i]);
+    }
+  }
+}
+fn3(111);
+fn3([11,22,33]);
+fn3({name:"kim",age:33});
+fn3(function() {
+  console.log("fn().....");
+});
+
+function fn4(name,fn) {
+  console.log("fn4().....");
+  console.log("name:"+name);
+  console.log(fn);
+  fn();
+}
+fn4("kim",function() {
+  console.log("fn().....");
+});
+
+var arr = [11,22,33];
+arr.forEach(function (item,i) {
+  console.log(item);//item
+  console.log(i);//index
+  console.log(arguments[0]);//item
+  console.log(arguments[1]);//index
+});
+arr.forEach((item,i) =>{
+  console.log(item);//item
+  console.log(i);//index
+});
+
+console.log("before setTimeout...");
+setTimeout(function() {
+  console.log("setTimeout...");
+},2000);
+console.log("after setTimeout...");
+
+(function functionName() {
+  console.log("functionName...");
+})();
+
+var result = (function functionName(x) {
+  console.log("functionName..."+x);
+  //return x*10;
+  //return [11,22,33];
+  //return {name:"kim",age:21};
+  return function functionName() {
+    console.log("return function");
+  }
+})(99);
+
+console.log("result:"+result);
+result();
+
+</script>
+</head>
+<body>
+  <h1 id="title">function : 1급함수 기능</h1>
+</body>
+</html>

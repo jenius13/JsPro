@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("object");
+var obj = {age:99, avg:33.33, arr:[11,22,33],info:{title:"javascript"}};
+obj.name = "kim";
+obj.fn = function(){};
+obj.names = ["kim","lee"];
+console.log(typeof obj);
+console.log(obj instanceof Array);
+console.log(obj.arr instanceof Array);
+console.log(obj.arr instanceof Object);
+console.log(obj.avg instanceof Object);
+console.log(obj.fn instanceof Object);
+
+
+console.log("names" in obj);
+console.log("names" in obj);
+console.log(obj.hasOwnProperty("names"));
+for (var key in obj) {
+  if (key === "age") {
+    console.log("오래오래사세요");
+  }
+  if (key==="avg"){
+    console.log("열공하세요");
+  }
+}
+
+delete obj.names;
+delete obj["info"];
+
+console.log(obj);
+console.log("================");
+var obj = new Object();
+obj.name = "kim2";
+obj.fn = function(){
+  console.log("aaaaa");
+};
+obj.names = ["kim2","lee2"];
+console.log(obj);
+
+
+//직접만드는방법(사용자정의 객체) : function, class(es6)
+function Person() {
+  this.name = "han";
+  this.tel = "010";
+}
+var p = new Person();
+console.log(typeof p);
+console.log(p instanceof Person);
+
+p.email = "aaa@aaa.com";
+console.log(p.email);
+console.log(p.name);
+console.log(p.tel);
+
+class Notebook{
+  constructor(){
+    this._pname = "lee";
+
+  }
+}
+var note = new Notebook();
+console.log(typeof note);
+console.log(note instanceof Notebook);
+note._price = 10000;
+console.log(note._price);
+console.log(note._pname);
+console.log(typeof note._price ==="number");
+console.log(typeof note._pname ==="string");
+
+</script>
+</head>
+<body>
+  <h1>object</h1>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html  dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("hello");
+console.log(su);//undefined
+var su;//undefined
+console.log(su);//undefined
+var su = 20;//동일한 이름의 변수 사용가능
+console.log(su);
+if (false) {
+  var kor = 99;
+}
+console.log(kor);
+
+
+// console.log(su2);//선언과 초기화 후 사용하지 않으면 에러
+let su2 = 100;//동일한 이름의 변수 사용불가
+console.log(su2);
+let su3 = 200;
+console.log(su3);
+if (true) {
+  let eng = 88;
+  //블럭안에서만 유효한 변수 선언
+}
+//console.log(eng);//에러
+
+
+// console.log(name);//선언과 초기화 후 사용하지 않으면 에러
+const name = 'kim';//"text", 'text'
+//const는 상수이며 변경불가,read-only
+console.log(name);
+//name = 'lee';
+if (true) {
+  const user_name = "lee";
+  //블럭안에서만 유효한 변수 선언
+}
+//console.log(user_name);
+
+x = 333;//런타입시에만 할당되는 변수
+console.log(x);
+if (true) {//거짓(0,'',"",undefined,null,false)이되면 에러
+  y = "leeYYYYY";
+  //블럭안에서만 유효한 변수 선언
+}
+console.log(y);
+
+</script>
+</head>
+<body>
+<h1>javascript</h1>
+</body>
+</html>

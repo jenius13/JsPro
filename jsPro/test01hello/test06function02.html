@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("function arguments, ...args");
+function fn1() {
+  console.log("fn1()....");
+  console.log(arguments);
+  console.log(arguments[0]);
+  console.log(arguments[1]);
+  console.log(arguments[2]);
+  for (var i in arguments) {
+    console.log(arguments[i]);
+  }
+}
+
+fn1(11,22);
+
+function fn2(...args) {
+  console.log("fn2()....");
+  console.log(args);
+  for (var i in args) {
+    console.log(args[i]);
+  }
+}
+fn2();
+fn2(11,22,33,44);
+//==================================
+
+
+function fn3(x,y) {
+  console.log("fn3()....");
+  console.log(x);
+  console.log(y);
+  console.log(arguments[2]);
+  console.log(arguments[3]);
+}
+fn3(11,22,33,44);
+//====================================
+
+
+function fn4(x,y) {
+  console.log("fn4()....");
+  var kor = x||110;
+  var eng = y||220;
+  console.log(x+":"+y);
+  console.log(kor+":"+eng);
+  return kor==eng;
+}
+fn4(10,5);
+console.log(fn4(10,5));
+console.log(fn4(null,null));
+console.log(fn4(10));
+console.log(fn4());
+
+
+</script>
+</head>
+<body>
+  <h1>function arguments, ...args</h1>
+</body>
+</html>

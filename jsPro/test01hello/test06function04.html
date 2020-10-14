@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("function : inner function");
+//1.전역변수
+let user_name;
+function fn1() {
+  console.log("fn1()....");
+  user_name = "kim";
+  let user_id = "admin";
+  console.log("local:"+user_name);
+  console.log("local:"+user_id);
+}
+fn1();
+console.log("outer:"+user_name);
+//console.log("outer:"+user_id);//error
+//==============================
+
+function fn2() {
+  console.log("fn2()....");
+  //var user_id = "admin2";
+  //this.user_id2 = user_id;
+}
+var f = new fn2();
+console.log("outer:"+f.user_id);
+
+</script>
+</head>
+<body>
+  <h1>function : inner function</h1>
+</body>
+</html>

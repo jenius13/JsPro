@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <p>Click the button to add a new element to the array</p>
+    <button onclick=myFunction()>"Try it"</button>
+
+    <p id="demo"></p>
+    
+    <script type="text/javascript">
+    var fruit = ['banana','apple','grape','wartermelon']
+    document.getElementById('demo').innerHTML = fruit;
+
+    function myFunction(){
+      fruit.push("KIWI");
+      document.getElementById('demo').innerHTML = fruit;
+    }
+
+    </script>
+
+
+  </head>
+  <body>
+
+  </body>
+</html>

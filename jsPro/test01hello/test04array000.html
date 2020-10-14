@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      var arr = [11,22,33];
+      window.onload = function(){
+        var title = document.getElementById('title');
+        title.innerText = arr;
+      }
+      function pushText(){
+        arr.push(88);
+        console.log(arr.length);
+        title.innerText = arr;
+      }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+  <h1 id="title">array</h1>
+  <button onclick=pushText()>"Push the button"</button>
+</html>

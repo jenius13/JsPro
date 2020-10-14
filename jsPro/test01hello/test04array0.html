@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html  dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("array");
+var arr = [11,22,33];//new Array();
+arr.forEach((item, i) => {
+  console.log(item)
+});
+
+var names = ["kim","lee","han"];
+for (var i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+
+var datas = new Array(11,22,33);
+datas[10]=99;
+datas.push(1000);
+datas.push(2000);
+datas.push(3000);
+datas.pop();
+datas.shift();
+datas.shift();
+datas.unshift(88);
+datas.reverse();
+//datas.sort();
+
+
+
+for (var i = 0; i < datas.length; i++) {
+  console.log(datas[i]);
+}
+console.log(datas.join("-"));
+console.log(Array.isArray(datas));
+</script>
+
+</head>
+<body>
+<h1>array</h1>
+</body>
+</html>

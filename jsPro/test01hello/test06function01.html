@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("function");
+//1.인자(매개변수,아규먼트) 무, 리턴 무
+fn1();//함수호출(함수콜)
+function fn1() {
+  console.log("fn()....");
+}
+console.log(fn1);
+console.log(fn1());
+console.log(fn1(33,44,55));
+
+//2.인자(매개변수,아규먼트) 무, 리턴 유
+function fn2() {
+  console.log("fn2()....");
+  return 10;//"kim",[],{},function,null,true
+}
+console.log(fn2);
+console.log(fn2());
+
+//3.인자(매개변수,아규먼트) 유, 리턴 무
+function fn3(x,y) {
+  console.log("fn3()...."+x+","+y);
+}
+fn3();
+fn3(11,22);
+fn3(11,22,44,55);
+//자바스크립트 함수정의 시 동일한 이름이 있을경우는
+//해당 함수를 호출할때 가장 마지막에 정의한 함수의 이름을 찾아간다.
+//함수콜할때 함수의 인자의 매칭은 중요하지않고 이름이 중요하다.
+
+//4.인자(매개변수,아규먼트) 유, 리턴 유
+function fn4(x,y) {
+  console.log("fn4()...."+x+","+y);
+  //return 100;//"kim",[],{},function,null,true
+  return x+y;
+}
+fn4();
+fn4("price",333);
+fn4("price",333,[11,22,33]);
+console.log(fn4());//undefined+undefined = NaN
+console.log(fn4("price",333));
+console.log(fn4(222,222));
+console.log(typeof fn4());
+console.log(isNaN(fn4()));
+console.log(!isNaN(fn4()));
+console.log(typeof fn4("price",333));
+console.log(typeof fn4(555,555));
+if(!isNaN(fn4(11,22))){
+  var sum = fn4(11,22);
+  console.log("sum"+sum);
+}
+
+</script>
+</head>
+<body>
+  <h1>function</h1>
+</body>
+</html>

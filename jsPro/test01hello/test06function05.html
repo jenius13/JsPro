@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("function : inner function");
+var globalFn;
+function fn1() {
+  console.log("fn1()....");
+  var user_name = "kim";
+  globalFn = function() {
+    console.log("gloabal fn");
+    var user_id = "admin";
+    console.log(user_id);
+  };
+  globalFn();
+  //console.log(user_id);
+}
+fn1();
+globalFn();
+//==============================
+
+
+var xxx;
+function fn2() {
+  console.log("fn2().....");
+  xxx = function() {
+    console.log("innerFn().....");
+  };
+}
+
+fn2();
+xxx();
+
+//===================================================================
+
+
+
+function fn3() {
+  console.log("fn3().....");
+  function innerFn() {
+    console.log("innerFn().....");
+  }
+  return innerFn;
+
+}
+
+var fn = fn3();
+fn();
+
+
+function fn4() {
+  console.log("fn4().....");
+  this.fn = function() {
+    console.log("innerFn().....");
+  };
+  //fn();
+
+}
+var f = new fn4();
+f.fn();
+
+</script>
+</head>
+<body>
+  <h1>function : inner function</h1>
+</body>
+</html>

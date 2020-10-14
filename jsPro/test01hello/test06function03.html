@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+console.log("function : inner function");
+var user_name;
+function fn1() {
+  console.log("fn1()....");
+  user_name = "kim";
+  console.log("local:"+user_name);
+
+}
+fn1();
+console.log("outer:"+user_name);
+
+function fn2() {
+  console.log("fn2().....");
+  var user_id = "lee";
+  console.log("local"+user_id);
+  return user_id
+}
+fn2();
+console.log("outer"+fn2());
+
+function fn3() {
+  console.log("fn3().....");
+  var user_email = "yang@aaa.com";
+  console.log("local"+user_email);
+
+}
+fn3();
+console.log("outer"+user_email;
+
+
+</script>
+</head>
+<body>
+  <h1>function : inner function</h1>
+</body>
+</html>
